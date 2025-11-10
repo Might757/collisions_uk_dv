@@ -17,14 +17,12 @@ Decision-centric analytics to identify collision hotspots and factors associated
   ```
 
 ## Config
-Edit `config/config.yaml`:
+
 
 ## How to run (one command)
 
 
 This runs: ingest → clean/feature → EDA aggregates/figures → model → dashboard prep.
-
-Run the dashboard locally:
 
 
 ## Project structure
