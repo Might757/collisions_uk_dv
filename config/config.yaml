@@ -9,3 +9,11 @@ paths:
   raw_dir: "data/raw"
   clean_dir: "data/clean"
   outputs_dir: "data/outputs"
+
+project:
+  region_name: "Greater London"
+  local_authorities: []
+
+model:
+  target: "serious_or_fatal"
+  calibration: true
