@@ -21,24 +21,46 @@ Decision-centric analytics to identify collision hotspots and factors associated
 
 ## How to run (one command)
 
-
 This runs: ingest → clean/feature → EDA aggregates/figures → model → dashboard prep.
+
+1. Run the full pipeline (data cleaning + modeling)
+py -3.11 run.sh
+
+2. Run modeling scripts
+py -3.11 src/modeling.py
+
+3. Launch interactive UK heatmap (Streamlit)
+py -3.11 -m streamlit run src/heatmap.py
+
+NOTE: i used -3.11 because I have multiple python versions, may not be the same for you guys.
+
+Opens a local web app (http://localhost:8501) showing a UK collision hotspot heatmap.
 
 
 ## Project structure
 ```
 data/
-  raw/            # downloaded CSV/Parquet (gitignored)
-  clean/          # cleaned tables (Parquet)
-  outputs/        # aggregates, figures, model artifacts
+  raw/               
+  clean/            
+  outputs/            
   README.md
+
 config/
-  config.yaml
+  config.yaml       
+  README.md    
+
 src/
-  import_collisions.py
-  clean_dataframe.py
-  requirements.txt
-run.sh
+  import_collisions.py 
+  clean_dataframe.py   
+  modeling.py          # machine learning model (Random Forest) for severity and exploratory data analysis (EDA) charts
+  heatmap.py           # Streamlit/Plotly UK hotspot heatmap
+  requirements.txt     
+
+outputs/
+  (outputs of HTML instances)
+  
+run.sh                
+README.md             
 proposal_draft.md
 ```
 
