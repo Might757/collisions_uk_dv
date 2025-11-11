@@ -1,0 +1,11 @@
+years:
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+paths:
+  raw_dir: "data/raw"
+  clean_dir: "data/clean"
+  outputs_dir: "data/outputs"
