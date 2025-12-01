@@ -6,19 +6,12 @@ Official dataset page: https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-4
 
 License: Open Government Licence v3 (OGL)
 
-## How to download
-
-Run:
-```bash
-python src/download_collisions.py
-```
-
 This fetches collision CSV files for configured years from data.dft.gov.uk and saves them as:
 - `data/raw/collisions_{YEAR}.csv`
 - `data/raw/collisions_{YEAR}.parquet` (for faster loading)
 
 ## Notes
-- URLs are hardcoded in `src/download_collisions.py` for 2019–2023.
+- URLs are hardcoded in `src/download_collisions.py` for 2020–2024.
 - Large files (~50–150MB per year) are gitignored; don't commit them.
 
 ## Citation
