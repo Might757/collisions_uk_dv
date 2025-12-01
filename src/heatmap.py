@@ -124,11 +124,11 @@ with col2:
 
     st.markdown("""
     <div class="insight-box">
-    • Displays total collisions per year  
-    • Shows accident severity distribution  
-    • Noticeable increase in crashes after 2020  
-    • Majority of crashes are slight  
-    • Fatalities remain under 5,000 per year  
+    • Displays total collisions per year\n
+    • Shows accident severity distribution\n
+    • Noticeable increase in crashes after 2020\n
+    • Majority of crashes are slight\n
+    • Fatalities remain under 5,000 per year\n
     </div>
     """, unsafe_allow_html=True)
 
@@ -149,10 +149,10 @@ with col2:
 
     st.markdown("""
     <div class="insight-box">
-    • Weekdays show a significantly higher crash rate  
-    • Likely caused by commuter traffic volume  
-    • Clear behavioural differences between days  
-    • Helps identify high-risk time periods  
+    • Weekdays show a significantly higher crash rate\n
+    • Likely caused by commuter traffic volume\n
+    • Clear behavioural differences between days\n  
+    • Helps identify high-risk time periods\n
     </div>
     """, unsafe_allow_html=True)
 
@@ -172,11 +172,11 @@ with col2:
 
     st.markdown("""
     <div class="insight-box">
-    • Rows = actual severity levels  
-    • Columns = predicted severity  
-    • Diagonal cells = correct predictions  
-    • Off-diagonal = misclassifications  
-    • Useful for assessing model reliability  
+    • Rows = actual severity levels\n
+    • Columns = predicted severity\n
+    • Diagonal cells = correct predictions\n  
+    • Off-diagonal = misclassifications\n
+    • Useful for assessing model reliability\n  
     </div>
     """, unsafe_allow_html=True)
 
