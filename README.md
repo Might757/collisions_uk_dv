@@ -5,7 +5,7 @@ Decision-centric analytics to identify collision hotspots and factors associated
 
 ## Data sources & licensing
 - UK STATS19 (DfT) accidents/vehicles/casualties: https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data
-- License: Open Government Licence v3. Include citation in report.
+- License: Open Government Licence v3.
 - We do NOT commit large raw data. See `data/README.md` to obtain.
 
 ## Environment / setup
@@ -16,7 +16,7 @@ Decision-centric analytics to identify collision hotspots and factors associated
   pip install -r requirements.txt
   ```
 
-## Config
+# Config
 
 
 ## How to run (one command)
