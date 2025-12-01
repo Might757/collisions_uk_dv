@@ -45,6 +45,7 @@ html, body, [class*="css"] {
     border-left: 5px solid #4a90e2;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    color: black;
 }
 
 .insight-box:hover {
@@ -116,7 +117,7 @@ st.subheader("Collisions per Year & Accident Severity")
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.image("images/overview_plots.png")
+    st.image("./src/images/overview_plots.png")
 
 with col2:
     st.markdown('<div class="chart-title">Collisions per Year & Accident Severity</div>', unsafe_allow_html=True)
@@ -141,7 +142,7 @@ st.markdown('<div class="section-title">📅 Weekend vs Weekday Crashes</div>', 
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.image("images/weekend_vs_weekday.png")
+    st.image("./src/images/weekend_vs_weekday.png")
 
 with col2:
     st.markdown('<div class="chart-title">Key Insights</div>', unsafe_allow_html=True)
@@ -164,7 +165,7 @@ st.markdown('<div class="section-title">🤖 Model Confusion Matrix</div>', unsa
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.image("images/confusion_matrix.png")
+    st.image("./src/images/confusion_matrix.png")
 
 with col2:
     st.markdown('<div class="chart-title">How to Read This</div>', unsafe_allow_html=True)

@@ -19,5 +19,4 @@ echo ""
 echo "[5/5] Launching interface..."
 python -m streamlit run ./src/heatmap.py
 echo ""
-#TODO "Add the rest of the pipeline here"
 echo "=== Pipeline Complete ==="

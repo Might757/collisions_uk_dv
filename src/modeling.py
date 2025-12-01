@@ -27,7 +27,7 @@ axes[1].set_ylabel("Count")
 
 
 plt.tight_layout()
-plt.savefig("images/overview_plots.png", dpi=300, bbox_inches="tight")
+plt.savefig("./src/images/overview_plots.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 df['datetime'] = pd.to_datetime(df['datetime'])
@@ -43,7 +43,7 @@ plt.xlabel("Day Type")
 plt.ylabel("Number of Crashes")
 plt.legend(title='Accident Severity')
 
-plt.savefig("images/weekend_vs_weekday.png", dpi=300, bbox_inches="tight")
+plt.savefig("./src/images/weekend_vs_weekday.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 X = df[['hour','road_type','urban_or_rural_area','junction_control']]
@@ -86,5 +86,5 @@ plt.title("Confusion Matrix")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 
-plt.savefig("images/confusion_matrix.png", dpi=300, bbox_inches="tight")
+plt.savefig("./src/images/confusion_matrix.png", dpi=300, bbox_inches="tight")
 plt.show()
