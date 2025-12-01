@@ -36,8 +36,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '/outputs'
+          # Upload the single HTML file from the outputs folder at repo root
+          path: 'outputs/uk_collisions_heatmap.html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
