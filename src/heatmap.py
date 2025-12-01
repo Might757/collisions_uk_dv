@@ -1,6 +1,8 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
 
 st.markdown("""
 <style>
@@ -86,18 +88,53 @@ df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 year_filter = st.slider("Select Year", int(df['year'].min()), int(df['year'].max()), int(df['year'].min()))
 df = df[df['year'] == year_filter]
 
-fig = px.density_mapbox(
-    df,
-    lat='latitude',
-    lon='longitude',
-    z='number_of_casualties',
-    radius=10,
-    center=dict(lat=54.5, lon=-2),
-    zoom=5,
-    mapbox_style="carto-positron",
+# Optional log scaling to help highlights
+df["log_casualties"] = np.log1p(df["number_of_casualties"])
+
+fig = go.Figure()
+
+# ---- HEATMAP LAYER ----
+fig.add_trace(go.Densitymapbox(
+    lat=df["latitude"],
+    lon=df["longitude"],
+    z=df["log_casualties"],     # weighted heat intensity
+    radius=25,                  # adjust for hotspot size
+    colorscale="Inferno",
+    opacity=0.6
+))
+
+# ---- CLUSTERED POINT LAYER ----
+fig.add_trace(go.Scattermapbox(
+    lat=df["latitude"],
+    lon=df["longitude"],
+    mode="markers",
+    marker=dict(
+        size=6,
+        color=df["number_of_casualties"],
+        colorscale="Inferno",
+        showscale=False
+    ),
+    hovertemplate="<b>Casualties:</b> %{marker.color}<extra></extra>",
+    cluster=dict(
+        enabled=True,
+        maxzoom=10,   # zoom level where clusters break apart
+        step=60
+    )
+))
+
+fig.update_layout(
+    mapbox=dict(
+        style="carto-positron",
+        center=dict(lat=54.5, lon=-2),
+        zoom=5,
+        accesstoken="YOUR_MAPBOX_TOKEN"
+    ),
+    margin=dict(l=0, r=0, t=0, b=0),
+    height=650,
+    coloraxis_colorbar=dict(title="Casualties (log)")
 )
 
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 fig.write_html("outputs/uk_collisions_heatmap.html")
 
 
