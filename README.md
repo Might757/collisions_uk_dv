@@ -43,6 +43,7 @@ config/
   README.md    
 
 src/
+  images/
   import_collisions.py 
   clean_dataframe.py   
   modeling.py          # machine learning model (Random Forest) for severity and exploratory data analysis (EDA) charts
